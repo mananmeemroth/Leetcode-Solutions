@@ -5,7 +5,6 @@ public:
     string removeOuterParentheses(string s) {
         string result; 
         int balance = 0;
-
         for (int i = 0; i < s.size(); i++) {
             if (s[i] == '(') {
                 if (balance > 0) {
@@ -19,8 +18,6 @@ public:
                 }
             }
         }
-
-        return result; 
-                      
+        return result;              
     }
 };
