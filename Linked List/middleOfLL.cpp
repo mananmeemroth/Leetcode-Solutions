@@ -1,3 +1,4 @@
+// brute force approach
 #include <iostream>
 using namespace std;
 class ListNode{
@@ -23,7 +24,7 @@ public:
         }
         return idx;
     }
-    
+
     ListNode* middleNode(ListNode* head) {
         int len = length(head);
         int mid = len / 2; 
@@ -34,5 +35,26 @@ public:
         }
 
         return temp;
+    }
+};
+
+// optimal approach (2 pointer approach)
+// 
+// one is fast and take 2 steps at a time and other is 
+// slow takes 1 step at a time and we will travers them
+//  till the fast reaches the end;and will return slow part
+
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        ListNode* slow = head;
+        ListNode* fast = head;
+
+        while (fast != nullptr && fast->next != nullptr) {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        
+        return slow;
     }
 };
