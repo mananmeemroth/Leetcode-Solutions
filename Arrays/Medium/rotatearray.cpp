@@ -7,9 +7,7 @@ public:
     void rotate(vector<int>& nums, int k) {
         int n = nums.size();
         k = k % n;
-        
         vector<int> arr1;
-        
         for (int i = n - k; i < n; i++) {
             arr1.push_back(nums[i]);
         }
