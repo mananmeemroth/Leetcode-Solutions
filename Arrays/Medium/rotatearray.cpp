@@ -15,7 +15,6 @@ public:
         for (int i = 0; i < n - k; i++) {
             arr1.push_back(nums[i]);
         }
-        
         nums = arr1;
     }
 };
