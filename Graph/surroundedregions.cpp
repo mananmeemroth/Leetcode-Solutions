@@ -10,7 +10,7 @@ public:
         DFS(board, i, j-1, m, n);
         DFS(board, i, j+1, m, n);
     }
-    
+
     void solve(vector<vector<char>>& board) {
       
       //We will use boundary DFS to solve this problem
