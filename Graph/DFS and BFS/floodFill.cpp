@@ -24,7 +24,7 @@ public:
         if (originalColor != color) {
             dfs(image, sr, sc, originalColor, color);
         }
-
+        
         return image;
     }
 };
