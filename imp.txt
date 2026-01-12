@@ -1,2 +1,6 @@
 1838,
 33,
+
+
+upsolve 
+Preorder Inorder Postorder Traversals in One Traversal 

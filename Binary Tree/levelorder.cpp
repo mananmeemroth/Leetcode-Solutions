@@ -1,9 +1,6 @@
 #include <iostream>
-#include <string>
-#include <vector>
 #include <queue>
-#include <queue>
-#include <unordered_set>
+
 using namespace std;
 class TreeNode{
 public:
@@ -12,21 +9,22 @@ public:
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
+
 class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
-        vector<vector<int>>ans;
-        if(root==NULL)return ans;
+        vector<vector<int>> ans;
         queue<TreeNode*>q;
+        if(root==nullptr) return ans;
         q.push(root);
         while(!q.empty()){
             int s=q.size();
-            vector<int>v;
+            vector<int> v;
             for(int i=0;i<s;i++){
-                TreeNode *node=q.front();
+                TreeNode* node = q.front();
                 q.pop();
-                if(node->left!=NULL)q.push(node->left);
-                if(node->right!=NULL)q.push(node->right);
+                if(node->left!=nullptr) q.push(node->left);
+                if(node->right!=nullptr) q.push(node->right);
                 v.push_back(node->val);
             }
             ans.push_back(v);
