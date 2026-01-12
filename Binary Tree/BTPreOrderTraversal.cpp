@@ -10,18 +10,33 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+// class Solution {
+// public:
+
+//     void traverse(TreeNode* root, vector<int> &v){
+//         if(!root) return;
+//         v.push_back(root->val);
+//         traverse(root->left, v);
+//         traverse(root->right, v);
+//     }
+//     vector<int> preorderTraversal(TreeNode* root) {
+//         vector<int> v; 
+//         traverse(root, v);
+//         return v;
+//     }
+// };
+
 class Solution {
 public:
-
-    void traverse(TreeNode* root, vector<int> &v){
+    void traversal(TreeNode* root, vector<int>&v){
         if(!root) return;
         v.push_back(root->val);
-        traverse(root->left, v);
-        traverse(root->right, v);
+        traversal(root->left, v);
+        traversal(root->right, v);
     }
     vector<int> preorderTraversal(TreeNode* root) {
-        vector<int> v; 
-        traverse(root, v);
+        vector<int> v;
+        traversal(root, v);
         return v;
     }
 };
