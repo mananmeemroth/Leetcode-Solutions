@@ -12,8 +12,22 @@ public:
 
 class Solution {
 public:
-    void deleteNode(ListNode* node) {
-        node->val = node->next->val;
-        node->next = node->next->next;
+    bool isBalanced(TreeNode* root) {
+        return checkHeight(root) != -1;
+    }
+
+private:
+    int checkHeight(TreeNode* root) {
+        if (root == nullptr) return 0;
+
+        int leftHt = checkHeight(root->left);
+        if (leftHt == -1) return -1;
+
+        int rightHt = checkHeight(root->right);
+        if (rightHt == -1) return -1;
+
+        if (abs(leftHt - rightHt) > 1) return -1;
+
+        return 1 + max(leftHt, rightHt);
     }
 };
