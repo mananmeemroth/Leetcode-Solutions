@@ -16,6 +16,6 @@ public:
         if(p==nullptr||q==nullptr) return p==q;
         bool isleftsame=isSameTree(p->left,q->left);
         bool isrightsame=isSameTree(p->right,q->right);
-        return isleftsame&&isrightsame&&(p->val==q->val);
+        return isleftsame&&isrightsame&& p->val==q->val;
     }
 };
